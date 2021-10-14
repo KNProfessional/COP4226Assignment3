@@ -52,17 +52,24 @@ namespace COP4226Assignment3
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.leftToolStrip = new System.Windows.Forms.ToolStrip();
+            this.rightToolStrip = new System.Windows.Forms.ToolStrip();
             this.topToolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.calculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dayCounterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.graphSectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.leftToolStrip = new System.Windows.Forms.ToolStrip();
-            this.rightToolStrip = new System.Windows.Forms.ToolStrip();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.statusStrip2 = new System.Windows.Forms.StatusStrip();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
@@ -70,13 +77,15 @@ namespace COP4226Assignment3
             this.toolStripContainer1.RightToolStripPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
-            this.topToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            this.topToolStrip.SuspendLayout();
+            this.statusStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -90,7 +99,7 @@ namespace COP4226Assignment3
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1050, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(1050, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -171,30 +180,30 @@ namespace COP4226Assignment3
             // calculatorHistoryToolStripMenuItem
             // 
             this.calculatorHistoryToolStripMenuItem.Name = "calculatorHistoryToolStripMenuItem";
-            this.calculatorHistoryToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.calculatorHistoryToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.calculatorHistoryToolStripMenuItem.Text = "Calculator history";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(267, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(257, 6);
             // 
             // graphMatrixtxtToolStripMenuItem
             // 
             this.graphMatrixtxtToolStripMenuItem.Name = "graphMatrixtxtToolStripMenuItem";
-            this.graphMatrixtxtToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.graphMatrixtxtToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.graphMatrixtxtToolStripMenuItem.Text = "Graph Matrix (.txt)";
             // 
             // graphMatrixcsvToolStripMenuItem
             // 
             this.graphMatrixcsvToolStripMenuItem.Name = "graphMatrixcsvToolStripMenuItem";
-            this.graphMatrixcsvToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.graphMatrixcsvToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.graphMatrixcsvToolStripMenuItem.Text = "Graph Matrix (.csv)";
             // 
             // multipleGraphsToolStripMenuItem
             // 
             this.multipleGraphsToolStripMenuItem.Name = "multipleGraphsToolStripMenuItem";
-            this.multipleGraphsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.multipleGraphsToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.multipleGraphsToolStripMenuItem.Text = "Multiple Graphs";
             // 
             // appearanceToolStripMenuItem
@@ -229,7 +238,7 @@ namespace COP4226Assignment3
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(164, 34);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // toolStripContainer1
@@ -242,19 +251,19 @@ namespace COP4226Assignment3
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.splitContainer1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(970, 628);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(996, 631);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             // 
             // toolStripContainer1.LeftToolStripPanel
             // 
             this.toolStripContainer1.LeftToolStripPanel.Controls.Add(this.leftToolStrip);
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 36);
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 33);
             this.toolStripContainer1.Name = "toolStripContainer1";
             // 
             // toolStripContainer1.RightToolStripPanel
             // 
             this.toolStripContainer1.RightToolStripPanel.Controls.Add(this.rightToolStrip);
-            this.toolStripContainer1.Size = new System.Drawing.Size(1050, 688);
+            this.toolStripContainer1.Size = new System.Drawing.Size(1050, 691);
             this.toolStripContainer1.TabIndex = 1;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -262,48 +271,6 @@ namespace COP4226Assignment3
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.topToolStrip);
             this.toolStripContainer1.TopToolStripPanel.Click += new System.EventHandler(this.toolStripContainer1_TopToolStripPanel_Click);
-            // 
-            // topToolStrip
-            // 
-            this.topToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.topToolStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.topToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButton1});
-            this.topToolStrip.Location = new System.Drawing.Point(4, 0);
-            this.topToolStrip.Name = "topToolStrip";
-            this.topToolStrip.Size = new System.Drawing.Size(60, 38);
-            this.topToolStrip.TabIndex = 0;
-            // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.calculatorToolStripMenuItem,
-            this.dayCounterToolStripMenuItem,
-            this.graphSectionToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(42, 33);
-            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
-            // 
-            // calculatorToolStripMenuItem
-            // 
-            this.calculatorToolStripMenuItem.Name = "calculatorToolStripMenuItem";
-            this.calculatorToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.calculatorToolStripMenuItem.Text = "Calculator";
-            // 
-            // dayCounterToolStripMenuItem
-            // 
-            this.dayCounterToolStripMenuItem.Name = "dayCounterToolStripMenuItem";
-            this.dayCounterToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.dayCounterToolStripMenuItem.Text = "Day Counter";
-            // 
-            // graphSectionToolStripMenuItem
-            // 
-            this.graphSectionToolStripMenuItem.Name = "graphSectionToolStripMenuItem";
-            this.graphSectionToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.graphSectionToolStripMenuItem.Text = "Graph Section";
             // 
             // statusStrip1
             // 
@@ -314,24 +281,6 @@ namespace COP4226Assignment3
             this.statusStrip1.Size = new System.Drawing.Size(1050, 22);
             this.statusStrip1.TabIndex = 0;
             // 
-            // leftToolStrip
-            // 
-            this.leftToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.leftToolStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.leftToolStrip.Location = new System.Drawing.Point(0, 4);
-            this.leftToolStrip.Name = "leftToolStrip";
-            this.leftToolStrip.Size = new System.Drawing.Size(27, 116);
-            this.leftToolStrip.TabIndex = 0;
-            // 
-            // rightToolStrip
-            // 
-            this.rightToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.rightToolStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.rightToolStrip.Location = new System.Drawing.Point(0, 4);
-            this.rightToolStrip.Name = "rightToolStrip";
-            this.rightToolStrip.Size = new System.Drawing.Size(40, 166);
-            this.rightToolStrip.TabIndex = 0;
-            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -341,8 +290,16 @@ namespace COP4226Assignment3
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(970, 628);
-            this.splitContainer1.SplitterDistance = 491;
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.statusStrip2);
+            this.splitContainer1.Panel2.Controls.Add(this.label2);
+            this.splitContainer1.Panel2.Controls.Add(this.label1);
+            this.splitContainer1.Panel2.Controls.Add(this.listBox2);
+            this.splitContainer1.Panel2.Controls.Add(this.listBox1);
+            this.splitContainer1.Size = new System.Drawing.Size(996, 631);
+            this.splitContainer1.SplitterDistance = 504;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
@@ -356,8 +313,8 @@ namespace COP4226Assignment3
             // 
             this.splitContainer2.Panel1.Controls.Add(this.tableLayoutPanel1);
             this.splitContainer2.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel1_Paint);
-            this.splitContainer2.Size = new System.Drawing.Size(491, 628);
-            this.splitContainer2.SplitterDistance = 515;
+            this.splitContainer2.Size = new System.Drawing.Size(504, 631);
+            this.splitContainer2.SplitterDistance = 517;
             this.splitContainer2.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -384,6 +341,127 @@ namespace COP4226Assignment3
             this.tableLayoutPanel1.Size = new System.Drawing.Size(501, 519);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // leftToolStrip
+            // 
+            this.leftToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.leftToolStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.leftToolStrip.Location = new System.Drawing.Point(0, 4);
+            this.leftToolStrip.Name = "leftToolStrip";
+            this.leftToolStrip.Size = new System.Drawing.Size(27, 116);
+            this.leftToolStrip.TabIndex = 0;
+            // 
+            // rightToolStrip
+            // 
+            this.rightToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.rightToolStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.rightToolStrip.Location = new System.Drawing.Point(0, 4);
+            this.rightToolStrip.Name = "rightToolStrip";
+            this.rightToolStrip.Size = new System.Drawing.Size(27, 116);
+            this.rightToolStrip.TabIndex = 0;
+            // 
+            // topToolStrip
+            // 
+            this.topToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.topToolStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.topToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton1});
+            this.topToolStrip.Location = new System.Drawing.Point(4, 0);
+            this.topToolStrip.Name = "topToolStrip";
+            this.topToolStrip.Size = new System.Drawing.Size(60, 33);
+            this.topToolStrip.TabIndex = 0;
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.calculatorToolStripMenuItem,
+            this.dayCounterToolStripMenuItem,
+            this.graphSectionToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(42, 28);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // calculatorToolStripMenuItem
+            // 
+            this.calculatorToolStripMenuItem.Name = "calculatorToolStripMenuItem";
+            this.calculatorToolStripMenuItem.Size = new System.Drawing.Size(225, 34);
+            this.calculatorToolStripMenuItem.Text = "Calculator";
+            // 
+            // dayCounterToolStripMenuItem
+            // 
+            this.dayCounterToolStripMenuItem.Name = "dayCounterToolStripMenuItem";
+            this.dayCounterToolStripMenuItem.Size = new System.Drawing.Size(225, 34);
+            this.dayCounterToolStripMenuItem.Text = "Day Counter";
+            // 
+            // graphSectionToolStripMenuItem
+            // 
+            this.graphSectionToolStripMenuItem.Name = "graphSectionToolStripMenuItem";
+            this.graphSectionToolStripMenuItem.Size = new System.Drawing.Size(225, 34);
+            this.graphSectionToolStripMenuItem.Text = "Graph Section";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(26, 31);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(432, 104);
+            this.listBox1.TabIndex = 0;
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 20;
+            this.listBox2.Location = new System.Drawing.Point(26, 455);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(432, 104);
+            this.listBox2.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 432);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "list of results";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(22, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(165, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "list of imported graphs";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // statusStrip2
+            // 
+            this.statusStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripProgressBar1,
+            this.toolStripStatusLabel1});
+            this.statusStrip2.Location = new System.Drawing.Point(0, 599);
+            this.statusStrip2.Name = "statusStrip2";
+            this.statusStrip2.Size = new System.Drawing.Size(488, 32);
+            this.statusStrip2.TabIndex = 4;
+            this.statusStrip2.Text = "statusStrip2";
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 24);
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(179, 25);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -407,14 +485,18 @@ namespace COP4226Assignment3
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
-            this.topToolStrip.ResumeLayout(false);
-            this.topToolStrip.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            this.topToolStrip.ResumeLayout(false);
+            this.topToolStrip.PerformLayout();
+            this.statusStrip2.ResumeLayout(false);
+            this.statusStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -455,6 +537,13 @@ namespace COP4226Assignment3
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.StatusStrip statusStrip2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 
