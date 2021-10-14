@@ -18,59 +18,42 @@ namespace COP4226Assignment3
             //g = new GraphAlgorithms(pBar, pLabel, statusStrip2);
         }
 
-        private void clearCalculatorHistroyToolStripMenuItem_Click(object sender, EventArgs e)
+        private void toolStripButton1_Click(object sender, EventArgs e)
         {
-
+            openFileDialog1.Filter = "txt files (*.txt)|*.txt";
+            openFileDialog1.ShowDialog();
         }
 
-        private void toolStripContainer1_TopToolStripPanel_Click(object sender, EventArgs e)
+        private void graphMatrixtxtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            openFileDialog1.Filter = "txt files (*.txt)|*.txt";
+            openFileDialog1.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void toolStripButton2_Click(object sender, EventArgs e)
         {
-
+            openFileDialog1.Filter = "csv files (*.csv)|*.csv";
+            openFileDialog1.ShowDialog();
         }
 
-        private void button20_Click(object sender, EventArgs e)
+        private void graphMatrixcsvToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            openFileDialog1.Filter = "csv files (*.csv)|*.csv";
+            openFileDialog1.ShowDialog();
         }
 
-        private void button16_Click(object sender, EventArgs e)
+        private void toolStripButton3_Click(object sender, EventArgs e)
         {
-
+            openFileDialog1.Multiselect = true;
+            openFileDialog1.Filter = "all supported (*.csv,*.txt)|*.csv;*.txt|csv files (*.csv)|*.csv|txt files (*.txt)|*.txt";
+            openFileDialog1.ShowDialog();
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void multipleGraphsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            openFileDialog1.Multiselect = true;
+            openFileDialog1.Filter = "all supported (*.csv,*.txt)|*.csv;*.txt|csv files (*.csv)|*.csv|txt files (*.txt)|*.txt";
+            openFileDialog1.ShowDialog();
         }
     }
 }
