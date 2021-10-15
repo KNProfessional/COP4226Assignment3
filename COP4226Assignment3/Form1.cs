@@ -57,6 +57,11 @@ namespace COP4226Assignment3
             openFileDialog1.Multiselect = true;
             openFileDialog1.Filter = "all supported (*.csv,*.txt)|*.csv;*.txt|csv files (*.csv)|*.csv|txt files (*.txt)|*.txt";
             openFileDialog1.ShowDialog();
+
+            foreach (String myfile in openFileDialog1.FileNames)
+            {
+                importedGraphList.Items.Add(openFileDialog1.FileName);
+            }
         }
 
         private void multipleGraphsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -64,6 +69,11 @@ namespace COP4226Assignment3
             openFileDialog1.Multiselect = true;
             openFileDialog1.Filter = "all supported (*.csv,*.txt)|*.csv;*.txt|csv files (*.csv)|*.csv|txt files (*.txt)|*.txt";
             openFileDialog1.ShowDialog();
+
+            foreach (String myfile in openFileDialog1.FileNames)
+            {
+                importedGraphList.Items.Add(openFileDialog1.FileName);
+            }
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
@@ -78,8 +88,59 @@ namespace COP4226Assignment3
 
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
-            g.GetMST(importedGraphList.SelectedItem.ToString());
-            calculatedResults.Items.Add(importedGraphList.SelectedItem.ToString());
+            if(importedGraphList.SelectedItem.Equals(null))
+            {
+                MessageBox.Show("Error: An imported graph file isn't selected.");
+            }
+            else
+            {
+                g.GetMST(importedGraphList.SelectedItem.ToString());
+                calculatedResults.Items.Add("MST: " + importedGraphList.SelectedItem.ToString());
+            }
+
+            /*try
+            {
+                g.GetMST(importedGraphList.SelectedItem.ToString());
+                calculatedResults.Items.Add("MST: " + importedGraphList.SelectedItem.ToString());
+            }
+            catch(System.NullReferenceException ex)
+            {
+                throw new NullReferenceException("Error: An imported graph file isn't selected.");
+            }*/
+        }
+
+        private void toolStripButton7_Click(object sender, EventArgs e)
+        {
+            g.Dijkstra(importedGraphList.SelectedIndex.ToString());
+            calculatedResults.Items.Add("Shortest Paths: " + importedGraphList.SelectedItem.ToString());
+        }
+
+        private void toolStripButton8_Click(object sender, EventArgs e)
+        {
+            String SelectedGraphFile;
+            saveFileDialog1.Filter = "txt files (*.txt)|*.txt";
+
+            if (calculatedResults.SelectedItem.ToString().Contains("MST"))
+            {
+                SelectedGraphFile = calculatedResults.SelectedItem.ToString();
+                saveFileDialog1.ShowDialog();
+                SelectedGraphFile = SelectedGraphFile.Replace("MST: ", string.Empty);
+                /*Console.WriteLine("Calculated Results Item: " + calculatedResults.SelectedItem.ToString());
+                Console.WriteLine("SelectedGraphFileName: " + SelectedGraphFile*/
+
+                g.WriteMSTSolutionTo(saveFileDialog1.FileName, SelectedGraphFile);
+            }
+            else if(calculatedResults.SelectedItem.ToString().Contains("Shortest Paths"))
+            {
+                SelectedGraphFile = calculatedResults.SelectedItem.ToString();
+                saveFileDialog1.ShowDialog();
+                SelectedGraphFile = SelectedGraphFile.Replace("Shortest Paths: ", string.Empty);
+                g.WriteSSSPSolutionTo(saveFileDialog1.FileName, SelectedGraphFile);
+            }
+            else
+            {
+                MessageBox.Show("Error: Graph Result not Selected");
+            }
         }
     }
 }
