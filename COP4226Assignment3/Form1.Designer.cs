@@ -61,8 +61,8 @@ namespace COP4226Assignment3
             this.pLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.calculatedResults = new System.Windows.Forms.ListBox();
+            this.importedGraphList = new System.Windows.Forms.ListBox();
             this.leftToolStrip = new System.Windows.Forms.ToolStrip();
             this.rightToolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -74,6 +74,11 @@ namespace COP4226Assignment3
             this.dayCounterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.graphSectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
@@ -258,7 +263,7 @@ namespace COP4226Assignment3
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.splitContainer1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(987, 636);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(975, 636);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             // 
             // toolStripContainer1.LeftToolStripPanel
@@ -302,10 +307,10 @@ namespace COP4226Assignment3
             this.splitContainer1.Panel2.Controls.Add(this.statusStrip2);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Panel2.Controls.Add(this.listBox2);
-            this.splitContainer1.Panel2.Controls.Add(this.listBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(987, 636);
-            this.splitContainer1.SplitterDistance = 499;
+            this.splitContainer1.Panel2.Controls.Add(this.calculatedResults);
+            this.splitContainer1.Panel2.Controls.Add(this.importedGraphList);
+            this.splitContainer1.Size = new System.Drawing.Size(975, 636);
+            this.splitContainer1.SplitterDistance = 492;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
@@ -318,7 +323,7 @@ namespace COP4226Assignment3
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.tableLayoutPanel1);
-            this.splitContainer2.Size = new System.Drawing.Size(499, 636);
+            this.splitContainer2.Size = new System.Drawing.Size(492, 636);
             this.splitContainer2.SplitterDistance = 521;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -354,7 +359,7 @@ namespace COP4226Assignment3
             this.pLabel});
             this.statusStrip2.Location = new System.Drawing.Point(0, 604);
             this.statusStrip2.Name = "statusStrip2";
-            this.statusStrip2.Size = new System.Drawing.Size(484, 32);
+            this.statusStrip2.Size = new System.Drawing.Size(479, 32);
             this.statusStrip2.TabIndex = 4;
             this.statusStrip2.Text = "statusStrip2";
             // 
@@ -387,23 +392,23 @@ namespace COP4226Assignment3
             this.label1.TabIndex = 2;
             this.label1.Text = "list of results";
             // 
-            // listBox2
+            // calculatedResults
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 20;
-            this.listBox2.Location = new System.Drawing.Point(26, 455);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(432, 104);
-            this.listBox2.TabIndex = 1;
+            this.calculatedResults.FormattingEnabled = true;
+            this.calculatedResults.ItemHeight = 20;
+            this.calculatedResults.Location = new System.Drawing.Point(26, 455);
+            this.calculatedResults.Name = "calculatedResults";
+            this.calculatedResults.Size = new System.Drawing.Size(432, 104);
+            this.calculatedResults.TabIndex = 1;
             // 
-            // listBox1
+            // importedGraphList
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(26, 31);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(432, 104);
-            this.listBox1.TabIndex = 0;
+            this.importedGraphList.FormattingEnabled = true;
+            this.importedGraphList.ItemHeight = 20;
+            this.importedGraphList.Location = new System.Drawing.Point(26, 31);
+            this.importedGraphList.Name = "importedGraphList";
+            this.importedGraphList.Size = new System.Drawing.Size(432, 104);
+            this.importedGraphList.TabIndex = 0;
             // 
             // leftToolStrip
             // 
@@ -421,10 +426,15 @@ namespace COP4226Assignment3
             this.rightToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton2,
-            this.toolStripButton3});
+            this.toolStripButton3,
+            this.toolStripSeparator4,
+            this.toolStripButton4,
+            this.toolStripButton5,
+            this.toolStripSeparator5,
+            this.toolStripButton6});
             this.rightToolStrip.Location = new System.Drawing.Point(0, 4);
             this.rightToolStrip.Name = "rightToolStrip";
-            this.rightToolStrip.Size = new System.Drawing.Size(36, 115);
+            this.rightToolStrip.Size = new System.Drawing.Size(48, 254);
             this.rightToolStrip.TabIndex = 0;
             // 
             // toolStripButton1
@@ -433,7 +443,7 @@ namespace COP4226Assignment3
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(33, 28);
+            this.toolStripButton1.Size = new System.Drawing.Size(45, 28);
             this.toolStripButton1.Text = "toolStripButton1";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -502,6 +512,46 @@ namespace COP4226Assignment3
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(45, 6);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(45, 28);
+            this.toolStripButton4.Text = "toolStripButton4";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(45, 28);
+            this.toolStripButton5.Text = "toolStripButton5";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(45, 6);
+            // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(45, 28);
+            this.toolStripButton6.Text = "toolStripButton6";
+            this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
             // Form1
             // 
@@ -583,14 +633,19 @@ namespace COP4226Assignment3
         private System.Windows.Forms.StatusStrip statusStrip2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox calculatedResults;
+        private System.Windows.Forms.ListBox importedGraphList;
         private System.Windows.Forms.ToolStripProgressBar pBar;
         private System.Windows.Forms.ToolStripStatusLabel pLabel;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton toolStripButton6;
     }
 }
 
