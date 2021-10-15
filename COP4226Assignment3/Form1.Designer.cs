@@ -57,7 +57,6 @@ namespace COP4226Assignment3
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button24 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
@@ -92,20 +91,25 @@ namespace COP4226Assignment3
             this.importedGraphList = new System.Windows.Forms.ListBox();
             this.leftToolStrip = new System.Windows.Forms.ToolStrip();
             this.rightToolStrip = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.topToolStrip = new System.Windows.Forms.ToolStrip();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.topToolStrip = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.calculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dayCounterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.graphSectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
@@ -224,33 +228,33 @@ namespace COP4226Assignment3
             // calculatorHistoryToolStripMenuItem
             // 
             this.calculatorHistoryToolStripMenuItem.Name = "calculatorHistoryToolStripMenuItem";
-            this.calculatorHistoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.calculatorHistoryToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.calculatorHistoryToolStripMenuItem.Text = "Calculator history";
             this.calculatorHistoryToolStripMenuItem.Click += new System.EventHandler(this.LoadCalculatorHistory);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(171, 6);
             // 
             // graphMatrixtxtToolStripMenuItem
             // 
             this.graphMatrixtxtToolStripMenuItem.Name = "graphMatrixtxtToolStripMenuItem";
-            this.graphMatrixtxtToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
+            this.graphMatrixtxtToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.graphMatrixtxtToolStripMenuItem.Text = "Graph Matrix (.txt)";
             this.graphMatrixtxtToolStripMenuItem.Click += new System.EventHandler(this.graphMatrixtxtToolStripMenuItem_Click);
             // 
             // graphMatrixcsvToolStripMenuItem
             // 
             this.graphMatrixcsvToolStripMenuItem.Name = "graphMatrixcsvToolStripMenuItem";
-            this.graphMatrixcsvToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
+            this.graphMatrixcsvToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.graphMatrixcsvToolStripMenuItem.Text = "Graph Matrix (.csv)";
             this.graphMatrixcsvToolStripMenuItem.Click += new System.EventHandler(this.graphMatrixcsvToolStripMenuItem_Click);
             // 
             // multipleGraphsToolStripMenuItem
             // 
             this.multipleGraphsToolStripMenuItem.Name = "multipleGraphsToolStripMenuItem";
-            this.multipleGraphsToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
+            this.multipleGraphsToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.multipleGraphsToolStripMenuItem.Text = "Multiple Graphs";
             this.multipleGraphsToolStripMenuItem.Click += new System.EventHandler(this.multipleGraphsToolStripMenuItem_Click);
             // 
@@ -300,7 +304,7 @@ namespace COP4226Assignment3
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.splitContainer1);
             this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(975, 636);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(639, 394);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             // 
             // toolStripContainer1.LeftToolStripPanel
@@ -346,10 +350,10 @@ namespace COP4226Assignment3
             this.splitContainer1.Panel2.Controls.Add(this.statusStrip2);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Panel2.Controls.Add(this.listBox2);
+            this.splitContainer1.Panel2.Controls.Add(this.calculatedResults);
             this.splitContainer1.Panel2.Controls.Add(this.importedGraphList);
-            this.splitContainer1.Size = new System.Drawing.Size(975, 636);
-            this.splitContainer1.SplitterDistance = 492;
+            this.splitContainer1.Size = new System.Drawing.Size(639, 394);
+            this.splitContainer1.SplitterDistance = 321;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
@@ -363,7 +367,7 @@ namespace COP4226Assignment3
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(299, 394);
+            this.splitContainer2.Size = new System.Drawing.Size(321, 394);
             this.splitContainer2.SplitterDistance = 322;
             this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 0;
@@ -377,22 +381,14 @@ namespace COP4226Assignment3
             // 
             // splitContainer3.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.textBox1);
+            this.splitContainer3.Panel1.Controls.Add(this.listBox2);
             // 
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.tableLayoutPanel1);
-            this.splitContainer3.Size = new System.Drawing.Size(299, 322);
+            this.splitContainer3.Size = new System.Drawing.Size(321, 322);
             this.splitContainer3.SplitterDistance = 104;
             this.splitContainer3.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(5, 5);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(305, 96);
-            this.textBox1.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
@@ -684,9 +680,9 @@ namespace COP4226Assignment3
             this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pBar,
             this.pLabel});
-            this.statusStrip2.Location = new System.Drawing.Point(0, 604);
+            this.statusStrip2.Location = new System.Drawing.Point(0, 364);
             this.statusStrip2.Name = "statusStrip2";
-            this.statusStrip2.Size = new System.Drawing.Size(479, 32);
+            this.statusStrip2.Size = new System.Drawing.Size(314, 30);
             this.statusStrip2.TabIndex = 4;
             this.statusStrip2.Text = "statusStrip2";
             // 
@@ -698,7 +694,7 @@ namespace COP4226Assignment3
             // pLabel
             // 
             this.pLabel.Name = "pLabel";
-            this.pLabel.Size = new System.Drawing.Size(179, 25);
+            this.pLabel.Size = new System.Drawing.Size(118, 25);
             this.pLabel.Text = "toolStripStatusLabel1";
             // 
             // label2
@@ -723,20 +719,19 @@ namespace COP4226Assignment3
             // 
             // calculatedResults
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(17, 296);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(289, 69);
-            this.listBox2.TabIndex = 1;
+            this.calculatedResults.FormattingEnabled = true;
+            this.calculatedResults.Location = new System.Drawing.Point(17, 296);
+            this.calculatedResults.Margin = new System.Windows.Forms.Padding(2);
+            this.calculatedResults.Name = "calculatedResults";
+            this.calculatedResults.Size = new System.Drawing.Size(289, 69);
+            this.calculatedResults.TabIndex = 1;
             // 
             // importedGraphList
             // 
             this.importedGraphList.FormattingEnabled = true;
-            this.importedGraphList.ItemHeight = 20;
             this.importedGraphList.Location = new System.Drawing.Point(26, 31);
             this.importedGraphList.Name = "importedGraphList";
-            this.importedGraphList.Size = new System.Drawing.Size(432, 104);
+            this.importedGraphList.Size = new System.Drawing.Size(432, 95);
             this.importedGraphList.TabIndex = 0;
             // 
             // leftToolStrip
@@ -744,12 +739,13 @@ namespace COP4226Assignment3
             this.leftToolStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.leftToolStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.leftToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton4,
-            this.toolStripButton5,
-            this.toolStripButton6});
+            this.toolStripButton10,
+            this.toolStripButton7,
+            this.toolStripButton8,
+            this.toolStripButton9});
             this.leftToolStrip.Location = new System.Drawing.Point(0, 4);
             this.leftToolStrip.Name = "leftToolStrip";
-            this.leftToolStrip.Size = new System.Drawing.Size(29, 104);
+            this.leftToolStrip.Size = new System.Drawing.Size(32, 154);
             this.leftToolStrip.TabIndex = 0;
             // 
             // rightToolStrip
@@ -767,8 +763,81 @@ namespace COP4226Assignment3
             this.toolStripButton6});
             this.rightToolStrip.Location = new System.Drawing.Point(0, 4);
             this.rightToolStrip.Name = "rightToolStrip";
-            this.rightToolStrip.Size = new System.Drawing.Size(29, 104);
+            this.rightToolStrip.Size = new System.Drawing.Size(29, 209);
             this.rightToolStrip.TabIndex = 0;
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(27, 6);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(27, 6);
+            // 
+            // topToolStrip
+            // 
+            this.topToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.topToolStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.topToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton1});
+            this.topToolStrip.Location = new System.Drawing.Point(4, 0);
+            this.topToolStrip.Name = "topToolStrip";
+            this.topToolStrip.Size = new System.Drawing.Size(49, 31);
+            this.topToolStrip.TabIndex = 0;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(5, 3);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(317, 95);
+            this.listBox2.TabIndex = 0;
+            // 
+            // toolStripButton10
+            // 
+            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton10.Image = global::COP4226Assignment3.Properties.Resources.save;
+            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton10.Name = "toolStripButton10";
+            this.toolStripButton10.Size = new System.Drawing.Size(30, 28);
+            this.toolStripButton10.Text = "toolStripButton10";
+            this.toolStripButton10.Click += new System.EventHandler(this.SaveCalculatorHistory);
+            // 
+            // toolStripButton7
+            // 
+            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton7.Image = global::COP4226Assignment3.Properties.Resources.sin;
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Size = new System.Drawing.Size(30, 28);
+            this.toolStripButton7.Text = "toolStripButton7";
+            this.toolStripButton7.Click += new System.EventHandler(this.SinX);
+            // 
+            // toolStripButton8
+            // 
+            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton8.Image = global::COP4226Assignment3.Properties.Resources.cos;
+            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.Size = new System.Drawing.Size(30, 28);
+            this.toolStripButton8.Text = "toolStripButton8";
+            this.toolStripButton8.Click += new System.EventHandler(this.CosX);
+            // 
+            // toolStripButton9
+            // 
+            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton9.Image = global::COP4226Assignment3.Properties.Resources.tan;
+            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.Size = new System.Drawing.Size(30, 28);
+            this.toolStripButton9.Text = "toolStripButton9";
+            this.toolStripButton9.Click += new System.EventHandler(this.TanX);
             // 
             // toolStripButton1
             // 
@@ -786,7 +855,7 @@ namespace COP4226Assignment3
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(33, 28);
+            this.toolStripButton2.Size = new System.Drawing.Size(27, 28);
             this.toolStripButton2.Text = "toolStripButton2";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -796,60 +865,9 @@ namespace COP4226Assignment3
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(33, 28);
+            this.toolStripButton3.Size = new System.Drawing.Size(27, 28);
             this.toolStripButton3.Text = "toolStripButton3";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
-            // topToolStrip
-            // 
-            this.topToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.topToolStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.topToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButton1});
-            this.topToolStrip.Location = new System.Drawing.Point(4, 0);
-            this.topToolStrip.Name = "topToolStrip";
-            this.topToolStrip.Size = new System.Drawing.Size(80, 31);
-            this.topToolStrip.TabIndex = 0;
-            // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.calculatorToolStripMenuItem,
-            this.dayCounterToolStripMenuItem,
-            this.graphSectionToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(37, 28);
-            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
-            // 
-            // calculatorToolStripMenuItem
-            // 
-            this.calculatorToolStripMenuItem.Name = "calculatorToolStripMenuItem";
-            this.calculatorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.calculatorToolStripMenuItem.Text = "Calculator";
-            // 
-            // dayCounterToolStripMenuItem
-            // 
-            this.dayCounterToolStripMenuItem.Name = "dayCounterToolStripMenuItem";
-            this.dayCounterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.dayCounterToolStripMenuItem.Text = "Day Counter";
-            // 
-            // graphSectionToolStripMenuItem
-            // 
-            this.graphSectionToolStripMenuItem.Name = "graphSectionToolStripMenuItem";
-            this.graphSectionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.graphSectionToolStripMenuItem.Text = "Graph Section";
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(45, 6);
             // 
             // toolStripButton4
             // 
@@ -871,11 +889,6 @@ namespace COP4226Assignment3
             this.toolStripButton5.Text = "toolStripButton5";
             this.toolStripButton5.Click += new System.EventHandler(this.SinX);
             // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(45, 6);
-            // 
             // toolStripButton6
             // 
             this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -885,6 +898,37 @@ namespace COP4226Assignment3
             this.toolStripButton6.Size = new System.Drawing.Size(27, 28);
             this.toolStripButton6.Text = "toolStripButton6";
             this.toolStripButton6.Click += new System.EventHandler(this.TanX);
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.calculatorToolStripMenuItem,
+            this.dayCounterToolStripMenuItem,
+            this.graphSectionToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(37, 28);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // calculatorToolStripMenuItem
+            // 
+            this.calculatorToolStripMenuItem.Name = "calculatorToolStripMenuItem";
+            this.calculatorToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.calculatorToolStripMenuItem.Text = "Calculator";
+            // 
+            // dayCounterToolStripMenuItem
+            // 
+            this.dayCounterToolStripMenuItem.Name = "dayCounterToolStripMenuItem";
+            this.dayCounterToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.dayCounterToolStripMenuItem.Text = "Day Counter";
+            // 
+            // graphSectionToolStripMenuItem
+            // 
+            this.graphSectionToolStripMenuItem.Name = "graphSectionToolStripMenuItem";
+            this.graphSectionToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.graphSectionToolStripMenuItem.Text = "Graph Section";
             // 
             // Form1
             // 
@@ -919,7 +963,6 @@ namespace COP4226Assignment3
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.splitContainer3.Panel1.ResumeLayout(false);
-            this.splitContainer3.Panel1.PerformLayout();
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
@@ -985,7 +1028,6 @@ namespace COP4226Assignment3
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.SplitContainer splitContainer3;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button22;
@@ -1014,6 +1056,11 @@ namespace COP4226Assignment3
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private System.Windows.Forms.ToolStripButton toolStripButton8;
+        private System.Windows.Forms.ToolStripButton toolStripButton9;
+        private System.Windows.Forms.ToolStripButton toolStripButton10;
     }
 }
 

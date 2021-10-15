@@ -69,17 +69,22 @@ namespace COP4226Assignment3
             {
                 str = " " + str + " ";
             }
-            this.textBox1.Text += str;
+            this.UpdateLastLine(this.GetCurrentLine() + str);
         }
 
         private void ClearTextBox()
         {
-            this.textBox1.Text = "";
+            this.listBox2.Items.Clear();
+        }
+
+        private void ClearLine()
+        {
+            this.UpdateLastLine("");
         }
 
         private string ProcessTextInTextBoxForCompute()
         {
-            string text = this.textBox1.Text;
+            string text = this.GetCurrentLine();
             // go through and apply all unary operators in-place
             List<string> unaryOperators = new List<string> { "1/x", "²", "√", "%" };
             string[] separated = text.Split(' ');
@@ -151,6 +156,7 @@ namespace COP4226Assignment3
 
         private void CalculateResult(object sender, EventArgs e)
         {
+            string originalText = this.GetCurrentLine();
             string text = this.ProcessTextInTextBoxForCompute();
             DataTable dt = new DataTable();
             var v = new object();
@@ -166,9 +172,8 @@ namespace COP4226Assignment3
                 Console.WriteLine("exception e: ", x);
             }
 
-
-            this.textBox1.Text = v.ToString();
-            this.listBox2.Items.Add($"{text} = {v.ToString()}");
+            this.UpdateLastLine($"{originalText} = {v.ToString()}");
+            this.listBox2.Items.Add("");
         }
 
         private void AddButtonValueToTextBox(object sender, EventArgs e)
@@ -196,16 +201,48 @@ namespace COP4226Assignment3
         {
             this.ClearTextBox();
         }
+        private string GetCurrentLine()
+        {
+            if (this.listBox2.Items.Count == 0)
+            {
+                return "";
+            }
+            return this.listBox2.Items[this.listBox2.Items.Count - 1] as string;
+        }
+
+        private void UpdateLastLine(string newTerm)
+        {
+            if (this.listBox2.Items.Count == 0)
+            {
+                this.listBox2.Items.Add(newTerm);
+            }
+            int index = this.listBox2.Items.Count - 1;
+            this.listBox2.Items.RemoveAt(index);
+            this.listBox2.Items.Add(newTerm);
+        }
+
+        private int GetCurrentLineSize()
+        {
+            if (this.listBox2.Items.Count == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return this.GetCurrentLine().Length;
+            }
+        }
 
         private void BackspaceButtonClick(object sender, EventArgs e)
         {
-            int endIndex = Math.Max(0, this.textBox1.Text.Length - 1);
-            this.textBox1.Text = this.textBox1.Text.Substring(0, endIndex);
+            string lastLine = this.GetCurrentLine();
+            int endIndex = Math.Max(0, this.GetCurrentLineSize() - 1);
+            this.UpdateLastLine(this.GetCurrentLine().Substring(0, endIndex));
         }
 
         private void SignChangeClick(object sender, EventArgs e)
         {
-            string text = this.textBox1.Text;
+            string text = this.GetCurrentLine();
             if (text.Length == 0)
             {
                 return;
@@ -214,10 +251,10 @@ namespace COP4226Assignment3
             switch (leadingSign)
             {
                 case '-':
-                    this.textBox1.Text = text.Substring(1, text.Length);
+                    this.UpdateLastLine(text.Substring(1, text.Length));
                     break;
                 default:
-                    this.textBox1.Text = "-" + text;
+                    this.UpdateLastLine("-" + text);
                     break;
             }
         }
@@ -304,7 +341,7 @@ namespace COP4226Assignment3
 
         private void ReplaceLastTerm(string newTerm)
         {
-            string[] input = this.textBox1.Text.Split(' ');
+            string[] input = this.GetCurrentLine().Split(' ');
             Array.Reverse(input);
             if (input.Length == 0)
             {
@@ -320,12 +357,12 @@ namespace COP4226Assignment3
             }
             string[] terms = newTerms.ToArray();
             Array.Reverse(terms);
-            this.textBox1.Text = string.Join(" ", terms);
+            this.UpdateLastLine(string.Join(" ", terms));
         }
 
         private double GetLastNumber()
         {
-            string[] input = this.textBox1.Text.Split(' ');
+            string[] input = this.GetCurrentLine().Split(' ');
             Array.Reverse(input);
             if (input.Length == 0)
             {
@@ -345,6 +382,7 @@ namespace COP4226Assignment3
                 return 0.1;
             }
             return num;
+        }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
