@@ -76,9 +76,33 @@ namespace COP4226Assignment3
             List<string> output = new List<string>();
             foreach (string value in separated)
             {
-                if (unaryOperators.Contains(value[value.Length - 1].ToString()))
+                char lastChar = value[value.Length - 1];
+                if (lastChar == ')')
                 {
-                    string op = value[value.Length- 1].ToString();
+                    string op = value.Substring(0, 3);
+                    double num;
+                    int end = value.IndexOf(')') - 1;
+                    string numString = value.Substring(4, end - 4);
+                    Double.TryParse(numString, out num);
+                    switch (op)
+                    {
+                        case "Cos":
+                            num = Math.Cos(num);
+                            break;
+                        case "Tan":
+                            num = Math.Tan(num);
+                            break;
+                        case "Sin":
+                            num = Math.Sin(num);
+                            break;
+                    }
+
+                    output.Add(num.ToString());
+
+                }
+                else if (unaryOperators.Contains(lastChar.ToString()))
+                {
+                    string op = lastChar.ToString();
                     double number;
                     try
                     {
@@ -109,7 +133,9 @@ namespace COP4226Assignment3
                 {
                     output.Add(value);
                 }
+                Console.WriteLine("data in: ", output);
             }
+            Console.WriteLine("data: ", output);
             return string.Join(" ", output.ToArray());
         }
 
@@ -245,6 +271,70 @@ namespace COP4226Assignment3
                 }
             }
 
+        }
+
+        private void CosX(object sender, EventArgs e)
+        {
+            double num = this.GetLastNumber();
+            this.ReplaceLastTerm($"Cos({num})");
+        }
+
+        private void SinX(object sender, EventArgs e)
+        {
+            double num = this.GetLastNumber();
+            this.ReplaceLastTerm($"Sin({num})");
+
+        }
+
+        private void TanX(object sender, EventArgs e)
+        {
+            double num = this.GetLastNumber();
+            this.ReplaceLastTerm($"Tan({num})");
+        }
+
+        private void ReplaceLastTerm(string newTerm)
+        {
+            string[] input = this.textBox1.Text.Split(' ');
+            Array.Reverse(input);
+            if (input.Length == 0)
+            {
+                return;
+            }
+            List<string> newTerms = new List<string>();
+            List<string> inputList = new List<string>(input);
+            inputList.RemoveAt(0);
+            newTerms.Add(newTerm);
+            foreach(var term in inputList)
+            {
+                newTerms.Add(term);
+            }
+            string[] terms = newTerms.ToArray();
+            Array.Reverse(terms);
+            this.textBox1.Text = string.Join(" ", terms);
+        }
+
+        private double GetLastNumber()
+        {
+            string[] input = this.textBox1.Text.Split(' ');
+            Array.Reverse(input);
+            if (input.Length == 0)
+            {
+                return 0.1;
+            }
+            string lastNum = input[0];
+            string lastChar = lastNum[Math.Max(lastNum.Length - 1, 0)].ToString();
+
+            if (new List<string> { "1/x", "²", "√", "%" }.Contains(lastChar))
+            {
+                lastNum = lastNum.Substring(0, Math.Max(lastNum.Length - 1, 0));
+            }
+
+            double num;
+            if (!Double.TryParse(lastNum, out num))
+            {
+                return 0.1;
+            }
+            return num;
         }
     }
 }
