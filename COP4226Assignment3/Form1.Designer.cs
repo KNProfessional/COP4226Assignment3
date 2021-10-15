@@ -381,7 +381,7 @@ namespace COP4226Assignment3
             // 
             // splitContainer3.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.listBox2);
+            //this.splitContainer3.Panel1.Controls.Add(this.listBox2);
             // 
             // splitContainer3.Panel2
             // 
@@ -721,10 +721,11 @@ namespace COP4226Assignment3
             this.leftToolStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.leftToolStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.leftToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton10,
+            /*this.toolStripButton10,
             this.toolStripButton7,
             this.toolStripButton8,
-            this.toolStripButton9});
+            this.toolStripButton9*/
+            });
             this.leftToolStrip.Location = new System.Drawing.Point(0, 4);
             this.leftToolStrip.Name = "leftToolStrip";
             this.leftToolStrip.Size = new System.Drawing.Size(26, 111);
