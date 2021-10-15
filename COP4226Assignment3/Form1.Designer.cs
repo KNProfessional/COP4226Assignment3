@@ -57,8 +57,8 @@ namespace COP4226Assignment3
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.pBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.pLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.listBox2 = new System.Windows.Forms.ListBox();
@@ -195,21 +195,21 @@ namespace COP4226Assignment3
             // graphMatrixtxtToolStripMenuItem
             // 
             this.graphMatrixtxtToolStripMenuItem.Name = "graphMatrixtxtToolStripMenuItem";
-            this.graphMatrixtxtToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.graphMatrixtxtToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.graphMatrixtxtToolStripMenuItem.Text = "Graph Matrix (.txt)";
             this.graphMatrixtxtToolStripMenuItem.Click += new System.EventHandler(this.graphMatrixtxtToolStripMenuItem_Click);
             // 
             // graphMatrixcsvToolStripMenuItem
             // 
             this.graphMatrixcsvToolStripMenuItem.Name = "graphMatrixcsvToolStripMenuItem";
-            this.graphMatrixcsvToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.graphMatrixcsvToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.graphMatrixcsvToolStripMenuItem.Text = "Graph Matrix (.csv)";
             this.graphMatrixcsvToolStripMenuItem.Click += new System.EventHandler(this.graphMatrixcsvToolStripMenuItem_Click);
             // 
             // multipleGraphsToolStripMenuItem
             // 
             this.multipleGraphsToolStripMenuItem.Name = "multipleGraphsToolStripMenuItem";
-            this.multipleGraphsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.multipleGraphsToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.multipleGraphsToolStripMenuItem.Text = "Multiple Graphs";
             this.multipleGraphsToolStripMenuItem.Click += new System.EventHandler(this.multipleGraphsToolStripMenuItem_Click);
             // 
@@ -350,24 +350,24 @@ namespace COP4226Assignment3
             // 
             this.statusStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripProgressBar1,
-            this.toolStripStatusLabel1});
+            this.pBar,
+            this.pLabel});
             this.statusStrip2.Location = new System.Drawing.Point(0, 604);
             this.statusStrip2.Name = "statusStrip2";
             this.statusStrip2.Size = new System.Drawing.Size(484, 32);
             this.statusStrip2.TabIndex = 4;
             this.statusStrip2.Text = "statusStrip2";
             // 
-            // toolStripProgressBar1
+            // pBar
             // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 24);
+            this.pBar.Name = "pBar";
+            this.pBar.Size = new System.Drawing.Size(100, 24);
             // 
-            // toolStripStatusLabel1
+            // pLabel
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(179, 25);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            this.pLabel.Name = "pLabel";
+            this.pLabel.Size = new System.Drawing.Size(179, 25);
+            this.pLabel.Text = "toolStripStatusLabel1";
             // 
             // label2
             // 
@@ -443,7 +443,7 @@ namespace COP4226Assignment3
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(45, 28);
+            this.toolStripButton2.Size = new System.Drawing.Size(33, 28);
             this.toolStripButton2.Text = "toolStripButton2";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -453,7 +453,7 @@ namespace COP4226Assignment3
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(45, 28);
+            this.toolStripButton3.Size = new System.Drawing.Size(33, 28);
             this.toolStripButton3.Text = "toolStripButton3";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
@@ -585,8 +585,8 @@ namespace COP4226Assignment3
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripProgressBar pBar;
+        private System.Windows.Forms.ToolStripStatusLabel pLabel;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;

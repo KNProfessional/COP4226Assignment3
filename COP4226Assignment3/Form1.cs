@@ -7,39 +7,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PA3Draft;
 
 namespace COP4226Assignment3
 {
     public partial class Form1 : Form
     {
+        GraphAlgorithms g;
         public Form1()
         {
             InitializeComponent();
-            //g = new GraphAlgorithms(pBar, pLabel, statusStrip2);
+            g = new GraphAlgorithms(pBar, pLabel, statusStrip2);
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "txt files (*.txt)|*.txt";
             openFileDialog1.ShowDialog();
+            g.ReadGraphFromTXTFile(openFileDialog1.FileName);
         }
 
         private void graphMatrixtxtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "txt files (*.txt)|*.txt";
             openFileDialog1.ShowDialog();
+            g.ReadGraphFromTXTFile(openFileDialog1.FileName);
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "csv files (*.csv)|*.csv";
             openFileDialog1.ShowDialog();
+            g.ReadGraphFromCSVFile(openFileDialog1.FileName);
         }
 
         private void graphMatrixcsvToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "csv files (*.csv)|*.csv";
             openFileDialog1.ShowDialog();
+            g.ReadGraphFromCSVFile(openFileDialog1.FileName);
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
