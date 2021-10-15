@@ -186,6 +186,37 @@ namespace COP4226Assignment3
             }
         }
 
+        private void LoadCalculatorHistory(object sender, EventArgs e)
+        {
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "txt files (*.txt)|*.txt";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = openFileDialog.FileName;
+
+                    //Read the contents of the file into a stream
+                    var fileStream = openFileDialog.OpenFile();
+
+                    using (StreamReader reader = new StreamReader(fileStream))
+                    {
+                        fileContent = reader.ReadToEnd();
+                    }
+                }
+            }
+            foreach (var item in fileContent.Split('\n'))
+            {
+                this.listBox2.Items.Add(item);
+            }
+        }
+
         private void ClearCalculatorHistory(object sender, EventArgs e)
         {
             this.listBox2.Items.Clear();

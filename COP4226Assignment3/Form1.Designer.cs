@@ -218,8 +218,9 @@ namespace COP4226Assignment3
             // calculatorHistoryToolStripMenuItem
             // 
             this.calculatorHistoryToolStripMenuItem.Name = "calculatorHistoryToolStripMenuItem";
-            this.calculatorHistoryToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.calculatorHistoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.calculatorHistoryToolStripMenuItem.Text = "Calculator history";
+            this.calculatorHistoryToolStripMenuItem.Click += new System.EventHandler(this.LoadCalculatorHistory);
             // 
             // toolStripSeparator3
             // 
