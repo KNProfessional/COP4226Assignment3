@@ -53,6 +53,19 @@ namespace COP4226Assignment3
             openFileDialog1.Multiselect = true;
             openFileDialog1.Filter = "all supported (*.csv,*.txt)|*.csv;*.txt|csv files (*.csv)|*.csv|txt files (*.txt)|*.txt";
             openFileDialog1.ShowDialog();
+
+            foreach (String myfile in openFileDialog1.FileNames)
+            {
+                if(myfile.Contains(".csv"))
+                {
+                    g.ReadGraphFromCSVFile(openFileDialog1.FileName);
+                }
+                else if(myfile.Contains(".txt"))
+                {
+                    g.ReadGraphFromTXTFile(openFileDialog1.FileName);
+                }
+                importedGraphList.Items.Add(openFileDialog1.FileName);
+            }
         }
 
         private void multipleGraphsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -60,6 +73,24 @@ namespace COP4226Assignment3
             openFileDialog1.Multiselect = true;
             openFileDialog1.Filter = "all supported (*.csv,*.txt)|*.csv;*.txt|csv files (*.csv)|*.csv|txt files (*.txt)|*.txt";
             openFileDialog1.ShowDialog();
+
+            foreach (String myfile in openFileDialog1.FileNames)
+            {
+                if (myfile.Contains(".csv"))
+                {
+                    g.ReadGraphFromCSVFile(openFileDialog1.FileName);
+                }
+                else if (myfile.Contains(".txt"))
+                {
+                    g.ReadGraphFromTXTFile(openFileDialog1.FileName);
+                }
+                else
+                {
+                    MessageBox.Show("Invalid File Type");
+                    break;
+                }
+                importedGraphList.Items.Add(openFileDialog1.FileName);
+            }
         }
 
         private void SendTextToTextBox(string str)
@@ -397,7 +428,169 @@ namespace COP4226Assignment3
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
             g.GetMST(importedGraphList.SelectedItem.ToString());
-            calculatedResults.Items.Add(importedGraphList.SelectedItem.ToString());
+            calculatedResults.Items.Add("MST: " + importedGraphList.SelectedItem.ToString());
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dijkstrasAlgorithm_Click(object sender, EventArgs e)
+        {
+            g.Dijkstra(importedGraphList.SelectedItem.ToString());
+            calculatedResults.Items.Add("Shortest Paths: " + importedGraphList.SelectedItem.ToString());
+        }
+
+        private void saveResult_Click(object sender, EventArgs e)
+        {
+            String SelectedGraphFile;
+            saveFileDialog1.Filter = "txt files (*.txt)|*.txt";
+
+            if (calculatedResults.SelectedItem.ToString().Contains("MST"))
+            {
+                SelectedGraphFile = calculatedResults.SelectedItem.ToString();
+                saveFileDialog1.ShowDialog();
+                SelectedGraphFile = SelectedGraphFile.Replace("MST: ", string.Empty);
+                /*Console.WriteLine("Calculated Results Item: " + calculatedResults.SelectedItem.ToString());
+                Console.WriteLine("SelectedGraphFileName: " + SelectedGraphFile*/
+
+                g.WriteMSTSolutionTo(saveFileDialog1.FileName, SelectedGraphFile);
+                calculatedResults.Items.Remove(calculatedResults.SelectedItem);
+            }
+            else if (calculatedResults.SelectedItem.ToString().Contains("Shortest Paths"))
+            {
+                SelectedGraphFile = calculatedResults.SelectedItem.ToString();
+                saveFileDialog1.ShowDialog();
+                SelectedGraphFile = SelectedGraphFile.Replace("Shortest Paths: ", string.Empty);
+                g.WriteSSSPSolutionTo(saveFileDialog1.FileName, SelectedGraphFile);
+                calculatedResults.Items.Remove(calculatedResults.SelectedItem);
+            }
+            else
+            {
+                MessageBox.Show("Error: Graph Result not Selected");
+            }
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            if (this.numericUpDown1.ActiveControl != null)
+            {
+                if (numericUpDown1.Value >= 0)
+                    this.dateTimePicker2.Value = this.dateTimePicker1.Value.AddDays((double)numericUpDown1.Value);
+                else
+                    this.dateTimePicker1.Value = this.dateTimePicker2.Value.AddDays(-1 * (double)numericUpDown1.Value);
+            }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            if (this.numericUpDown1.ActiveControl != null)
+                return;
+            int c = this.dateTimePicker1.Value.CompareTo(this.dateTimePicker2.Value);
+            int days = 0;
+            DateTime temp;
+            if (c > 0)
+            {
+                temp = this.dateTimePicker2.Value;
+                while (!temp.Date.Equals(dateTimePicker1.Value.Date))
+                {
+                    days--;
+                    temp = temp.AddDays(1);
+                }
+            }
+            else
+            {
+                temp = this.dateTimePicker1.Value;
+                while (!temp.Date.Equals(dateTimePicker2.Value.Date))
+                {
+                    days++;
+                    temp = temp.AddDays(1);
+                }
+            }
+            this.numericUpDown1.Value = days;
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            if (this.numericUpDown1.ActiveControl != null)
+                return;
+            int c = this.dateTimePicker1.Value.CompareTo(this.dateTimePicker2.Value);
+            int days = 0;
+            DateTime temp;
+            if (c > 0)
+            {
+                temp = this.dateTimePicker2.Value;
+                while (!temp.Date.Equals(dateTimePicker1.Value.Date))
+                {
+                    days--;
+                    temp = temp.AddDays(1);
+                }
+            }
+            else
+            {
+                temp = this.dateTimePicker1.Value;
+                while (!temp.Date.Equals(dateTimePicker2.Value.Date))
+                {
+                    days++;
+                    temp = temp.AddDays(1);
+                }
+            }
+            this.numericUpDown1.Value = days;
+        }
+
+        private void saveMinimumSpanningTreeAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            String SelectedGraphFile = calculatedResults.SelectedItem.ToString();
+            saveFileDialog1.ShowDialog();
+            SelectedGraphFile = SelectedGraphFile.Replace("MST: ", string.Empty);
+            /*Console.WriteLine("Calculated Results Item: " + calculatedResults.SelectedItem.ToString());
+            Console.WriteLine("SelectedGraphFileName: " + SelectedGraphFile*/
+
+            g.WriteMSTSolutionTo(saveFileDialog1.FileName, SelectedGraphFile);
+            calculatedResults.Items.Remove(calculatedResults.SelectedItem);
+        }
+
+        private void saveShortestPathsAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            String SelectedGraphFile = calculatedResults.SelectedItem.ToString();
+            saveFileDialog1.ShowDialog();
+            SelectedGraphFile = SelectedGraphFile.Replace("Shortest Paths: ", string.Empty);
+            g.WriteSSSPSolutionTo(saveFileDialog1.FileName, SelectedGraphFile);
+            calculatedResults.Items.Remove(calculatedResults.SelectedItem);
+        }
+
+        private void graphSectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            splitContainer1.Panel2.BackColor = colorDialog1.Color;
+        }
+
+        private void calculatorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            splitContainer2.Panel1.BackColor = colorDialog1.Color;
+        }
+
+        private void dayCounterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            splitContainer2.Panel2.BackColor = colorDialog1.Color;
+        }
+
+        private void modifyBackgroundColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void appearanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString();
         }
     }
 }
